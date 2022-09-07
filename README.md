@@ -28,6 +28,7 @@ py -c "import sys, json; print(json.load(sys.stdin)['access_token'])" )"
 
 ## О проекте
 
+
 Проект, на котором подключены FastAPI и Django одновременно. Django используется только как ORM и
 админка, FastAPI используется для запросов.
 
