@@ -1,0 +1,71 @@
+export TOKEN="$( curl -H "Content-Type: application/json" -X POST \
+-d '{"username":"test","password":"test"}' http://localhost:8000/login | \
+py -c "import sys, json; print(json.load(sys.stdin)['access_token'])" )"
+
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/new_player' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H "Authorization: Bearer $TOKEN"\
+  -d '{
+  "name": "g",
+  "email": "afds@gmail.com"
+}'
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/new_player' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H "Authorization: Bearer $TOKEN"\
+  -d '{
+  "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "email": "afds@gmail.com"
+}'
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/new_player' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H "Authorization: Bearer $TOKEN"\
+  -d '{
+  "name": "c",
+  "email": "cfds@gmail.com"
+}'
+
+EMAIL
+curl -X 'POST' \
+  'http://127.0.0.1:8000/new_player' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H "Authorization: Bearer $TOKEN"\
+  -d '{
+  "name": "d",
+  "email": "dfdsail.com"
+}'
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/new_player' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H "Authorization: Bearer $TOKEN"\
+  -d '{
+  "name": "e",
+  "email": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcfds@gmail.com"
+}'
+
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/new_player' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H "Authorization: Bearer $TOKEN"\
+  -d '{
+  "name": "g",
+  "email": "gfds@gmail.com"
+}'
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/add_player_to_game?game_id=10&player_id=2' \
+  -H 'accept: application/json' \
+  -H "Authorization: Bearer $TOKEN"
